@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SMS Spam Detector</title>
+
+    <link rel="stylesheet" href="{% static 'Spam/Css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Spam/Css/Style.css' %}">
+    <link rel="stylesheet" href="{% static 'Spam/Css/radio.css' %}">
+</head>
+
+<body>
+    <section>
+        <header>
+            <nav>
+                <div><a href="#" class="brand">SSD</a></div>
+            </nav>
+        </header>
+
+        <div class="fluid-container content">
+            <div class="row m-auto">
+                <div class="col-md-6 p-5 m-auto typo-content">
+                    <h1>SMS SPAM DETECTOR</h1>
+                    <p>Enter your message, choose an algorithm, and check if it's spam.</p>
+                </div>
+
+                <div class="col-md-6 p-5 m-auto form-content">
+                    <form method="post" action="{% url 'checkSpam' %}" class="main-form">
+                        {% csrf_token %}
+                        <textarea name="rawdata" placeholder="Enter Your Text Here..." id="rawdata" required></textarea><br>
+                        <div class="algo-choice">
+                            <label class="radiocontainer">Algo - 1 (Random Forest)
+                                <input type="radio" name="algo" value="Algo-1" required>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="radiocontainer">Algo - 2 (SVM)
+                                <input type="radio" name="algo" value="Algo-2">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="check-holder">
+                            <button type="submit" class="check-btn">Check</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="{% static 'Spam/Js/JQuery.js' %}"></script>
+    <script src="{% static 'Spam/Js/Bootstrap.min.js' %}"></script>
+    <script src="{% static 'Spam/Js/Main.js' %}"></script>
+</body>
+</html>

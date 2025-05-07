@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spam Result</title>
+    <link rel="stylesheet" href="{% static 'Spam/Css/ans.css' %}">
+    <link rel="stylesheet" href="{% static 'Spam/Css/fonts.css' %}">
+</head>
+<body>
+
+    <section class="AnswerSection">
+        <p class="answer">
+            {% if answer == "ham" %}
+                Not Spam 
+            {% elif answer == "spam" %}
+                Spam 
+            {% else %}
+                Invalid input or unknown result.
+            {% endif %}
+        </p>
+        <a href="{% url 'index' %}" class="backbtn">Back</a>
+    </section>
+
+</body>
+</html>

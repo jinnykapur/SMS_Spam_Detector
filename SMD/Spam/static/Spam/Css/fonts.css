@@ -1,0 +1,24 @@
+@font-face {
+    font-family: Azonix;
+    src: url('../Fonts/PoetsenOne-Regular.ttf');
+}
+
+@font-face {
+    font-family: Centaur;
+    src: url('../Fonts/Questrial-Regular.ttf');
+}
+
+@font-face {
+    font-family: Jonesy;
+    src: url('../Fonts/RadioCanada-VariableFont_wdth\,wght.ttf');
+}
+
+@font-face {
+    font-family: RobotL;
+    src: url('../Fonts/CabinCondensed-Medium.ttf');
+}
+
+@font-face {
+    font-family: RobotoR;
+    src: url('../Fonts/CabinCondensed-Regular.ttf');
+}

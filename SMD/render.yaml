@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: SMD
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn SMD.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: SMD.settings
+      - key: SECRET_KEY
+        value: your-secret-key
+      - key: DEBUG
+        value: 'False'
